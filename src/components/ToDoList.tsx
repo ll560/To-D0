@@ -1,6 +1,6 @@
 import React from 'react';
 import ToDoItem from './ToDoItem.tsx';
-
+import '../styles/toDoList.css'
 interface Todo {
   id: number;
   text: string;

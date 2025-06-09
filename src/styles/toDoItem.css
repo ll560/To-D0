@@ -1,0 +1,33 @@
+.todo-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #666;
+  opacity:0.8;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-item button {
+  float: right;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-item button:hover {
+  background-color: #e91e63;
+}

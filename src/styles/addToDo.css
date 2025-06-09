@@ -1,0 +1,25 @@
+.add-todo {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.add-todo input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.add-todo button[type="submit"] {
+  width: 20%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.add-todo button[type="submit"]:hover {
+  background-color: #3e8e41;
+}

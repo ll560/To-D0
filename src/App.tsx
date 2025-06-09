@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import ToDoList from './components/ToDoList';
 import AddToDo from './components/AddToDo';
+import './app.css'
 
 const LOCAL_STORAGE_KEY = 'todos'
-//src/types.ts --> import {Todo} from './types';
+
 interface Todo{
     id: number;
     text: string;
@@ -12,10 +13,6 @@ interface Todo{
 }
 
 const App: React.FC = () => {
-//     const [todos, setTodos] = useState<Todo[]>([
-//     { id: 1, text: 'Buy milk', completed: false },
-//     { id: 2, text: 'Walk the dog', completed: false },
-//   ]);
 
  const [todos, setTodos] = useState<Todo[]>(() => {
     const storedTodos = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -37,16 +34,26 @@ const App: React.FC = () => {
   const handleRemoveTodo = (id: number) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
+
+  const options: Intl.DateTimeFormatOptions = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  };
+
+  const currentDate = new Date().toLocaleDateString('en-US', options);
+
     return (
-        <div>
+        <div className='app'>
             <Header title="To Do App"/>
-            <p>This is a simple React application using Vite.</p>
+             <div className="current-date">{currentDate}</div>
             <AddToDo onAddTodo={handleAddTodo} />
             <ToDoList
-        todos={todos}
-        onToggleCompleted={handleToggleCompleted}
-        onRemoveTodo={handleRemoveTodo}
-      />
+                todos={todos}
+                onToggleCompleted={handleToggleCompleted}
+                onRemoveTodo={handleRemoveTodo}
+            />
         </div>
     );
 };

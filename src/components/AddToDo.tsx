@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/addToDo.css'
 
 interface AddToDoProps {
   onAddTodo: (text: string) => void;
@@ -21,7 +22,7 @@ function AddToDo({ onAddTodo }: AddToDoProps) {
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Add new todo"
+        placeholder="Add new task"
       />
       <button type="submit">Add</button>
     </form>
